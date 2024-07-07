@@ -1,0 +1,65 @@
+/* Estilos para el nav */
+#headder {
+  background-color: black;
+  padding: 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  margin-left: 15%;
+  width: 80px;
+  height: auto;
+}
+
+#navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+#navbar li {
+  margin-right: 5px;
+}
+
+#navbar li a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#navbar li a:hover {
+  background-color: #ccc;
+  color: #000;
+}
+
+
+/* Estilos para el dropdown */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #000000;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.PerfilOpciones:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 5px;
+  color: #050505;
+  text-decoration: none;
+}
+
+.dropdown-item:hover {
+  background-color: #ccc;
+  color: #000;
+}

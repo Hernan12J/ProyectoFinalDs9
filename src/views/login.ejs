@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzason</title>
+    <!-- Links de css -->
+    <link rel="stylesheet" href="login.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    
+    <!-- Links de iconos -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="icon" href="/icono.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Aqui llamamos el headder osea la nav que creamos que se encuenta en la carpeta partials y se llama nav.ejs -->
+    <%- include('partials/nav') %>
+
+
+  <!-- <div class="img_fondo">
+    <img src="fondo_login.png" alt="">
+  </div> -->
+
+
+    <div class="framelogin">
+      <!-- cabecera del login -->
+      <div id="indicaciones">
+        <h2 id="titulo">Inicio de sesión</h2>
+      </div>
+      <% if (typeof alert !== 'undefined' && alert) { %>
+        <div class="alert <%= typeof alertClass !== 'undefined' ? alertClass : '' %>">
+          <%= alert %>
+        </div>
+      <% } %>
+      
+    
+      <form id="LoginForm" action="/login" method="POST">
+        <!-- nombre y contraseña -->
+        <div class="form__group field">
+          <input type="email" class="form__field" placeholder="email" name="email" id="email" required />
+          <label for="email" class="form__label"></label>
+        </div>
+        <div class="form__group field">
+          <input type="password" class="form__field" placeholder="Contraseña" name="password" id="password" required />
+          <label for="password" class="form__label"></label>
+        </div>
+        <!-- boton para iniciar sesión -->
+        
+        <div class="btn">
+          <button class="iniciar" type="submit">Iniciar sesión</button>
+        </div>
+
+    
+        <!-- recuperar cuenta -->
+        <div class="recuperar">
+          <a href="registro">Crear cuenta</a>
+        </div>
+      </form>
+    </div>
+    
+    <div class="linea">
+    </div>
+</body>
+</html>

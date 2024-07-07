@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzason</title>
+    <!-- Links de css -->
+    <link rel="stylesheet" href="catalogo.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    
+    <!-- Links de iconos -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="icon" href="/icono.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Aqui llamamos el headder osea la nav que creamos que se encuenta en la carpeta partials y se llama nav.ejs -->
+    <%- include('partials/nav') %>
+  
+
+  <!-- Aui comenzamos a desplegar nuestros productos -->
+  <section id="producto1" class="section-p1">
+
+    <div id="pro-container3" class="pro-container">
+      
+    </div>
+  </section>
+
+
+    <script src="catalogo_BD.js"></script>
+    <%- include('partials/footer') %>
+</body>
+</html>

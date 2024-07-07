@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzason</title>
+    <!-- Links de css -->
+    <link rel="stylesheet" href="registro.css">
+        <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <!-- Links de iconos -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="icon" href="/icono.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- Aqui llamamos el headder osea la nav que creamos que se encuenta en la carpeta partials y se llama nav.ejs -->
+    <%- include('partials/nav') %>
+
+        <div class="registro">
+            <div class="frameregistro">
+                <form class="formcont" id="RegistroForm" action="/registro" method="POST">
+                    <h2>Registro de cuenta</h2>
+
+                    <% if (mensaje) { %>
+                        <div class="alert <%= alertClass %>">
+                            <%= mensaje %>
+                        </div>
+                        <% } %>
+
+                            <div class="input-group">
+                                <div class="input-half">
+                                    <input placeholder="Nombre" type="text" name="nombre" id="nombre" required>
+                                </div>
+                                <div class="input-half">
+                                    <input placeholder="Apellido" type="text" name="apellido" id="apellido" required>
+                                </div>
+                            </div>
+
+                            <div class="input-group2">
+                                <input placeholder="Correo" type="email" name="email" id="email" required>
+                            </div>
+
+                            <div class="input-half">
+                                <input placeholder="Contraseña" type="password" name="pass" id="pass" required>
+                            </div>
+
+                            
+
+                            <div class="partebaja">
+                                <button type="submit" class="btn_registrar">Crear cuenta</button>
+                                <div class="volver">
+                                    <a href="login">Iniciar sesion</a>
+                                </div>
+                            </div>
+
+                </form>
+            </div>
+        </div>
+
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="contacto.css">
+    <link rel="icon" href="/icono.png" type="image/x-icon">
+</head>
+<body>
+    <h1>Página de Contacto</h1>
+    <form action="/send" method="POST">
+        <label for="name">Nombre:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Correo Electrónico:</label><br>
+        <label for="asunto">Asunto</label>
+        <input type="text" name="asunto" id="asunto">
+        <input type="email" id="correo" name="correo" required><br>
+        <label for="message">Mensaje:</label><br>
+        <textarea id="mensaje" name="mensaje" required></textarea><br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

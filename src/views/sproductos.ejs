@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pizzason</title>
+  <!-- Links de css -->
+  <link rel="stylesheet" href="sproductos.css" />
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <!-- Links de iconos -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="/icono.png" type="image/x-icon">
+</head>
+
+
+<body>
+  <!-- Aqui llamamos el headder osea la nav que creamos que se encuenta en la carpeta partials y se llama nav.ejs -->
+  <%- include('partials/nav') %>
+
+    <section id="prodetalles" class="section-p1">
+      
+      <div class="solo-pro-image">
+        <!-- esta es la imagen principal, en teoria esta imagen se remplaza -->
+        <img src="<%= imagen %>" width="800px" height="500px" id="MainImg" alt=""/>
+
+
+        <div class="small-img-group">
+          <div class="small-img-row">
+
+          </div>
+        </div>
+      </div>
+
+      <form action="/agregar" method="POST">
+        <input type="hidden" name="id" value="<%= id_producto %>" />
+        <div class="solo-pro-detalles">
+          <h6><a href="catalogo">Catalogo</a> / Detalles</h6>
+          <h4>
+            <%= producto %>
+          </h4>
+          <h2>
+            <%= precio %>
+          </h2>
+          <select id="tamaño" name="tamaño" onchange="setDefaultOption()">
+            <option>Pequeña</option>
+            <option>Mediana</option>
+            <option>Familiar</option>
+          </select>
+
+          <input type="number" id="cantidad" name="cantidad" value="1" />
+
+          <br> <br>
+          <button class="normal">Añadir a el carrito</button>
+      </form>
+
+      <h4>Detalles de producto</h4>
+      <span>
+        <%= descripcion %>
+      </span>
+      </div>
+    </section>
+
+
+ 
+
+        <!-- <script src="script.js"></script> -->
+        <script src="dscrp_product.js"></script>
+</body>
+
+</html>

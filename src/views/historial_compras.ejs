@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de compra</title>
+    <link rel="stylesheet" href="historial.css">
+    <!-- Links de iconos -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="icon" href="/icono.png" type="image/x-icon">
+</head>
+
+<body>
+    <%- include('partials/nav') %>
+
+    <div class="contenedor_carrito">
+        <section id="productos-agregados">
+        
+        <div class="titulo">
+            <h2>Historial <i class="fa-solid fa-cart-shopping"></i></h2>
+        </div>
+          
+          <ul class="lista-productos">
+            <% if (carrito.length===0) { %>
+              <li>
+                <h3 class="sinproductos">No hay productos en el Historial</h3>
+              </li>
+            <% } else { %>
+                <% carrito.forEach(function(producto) { %>
+                  <li>
+                    <div class="img_producto">
+                      <img id="img_producto" src="<%= producto.imagen_producto %>" alt="<%= producto.producto %>"
+                        img="<%= producto.imagen_producto %>">
+                    </div>
+  
+                    <div class="producto-info">
+
+                      <div class="nombre_producto">
+                        <h3 id="nombre_producto"><%= producto.nombre_producto %></h3>
+                      </div>
+  
+                      <div class="producto-detalles">
+
+                        <div class="precioo">
+                          <p class="bold">Precio por producto: <span>$<%= producto.precio %></span></p>
+                        </div>
+
+                        <div class="cantidad">
+                          <p class="bold" id="producto_cantidad">Cantidad: <span class="cantidad"><%= producto.cantidad %></span></p>
+                        </div>
+
+                        <div class="fecha">
+                          <p class="bold" id="fecha" >Tamaño: <span class="fechaa"><%= producto.tamaño %></span> </p>
+                        </div>
+                        
+
+                        <div class="fecha">
+                            <p class="bold" id="fecha" >Fecha de compra: <span class="fechaa"><%= producto.fecha %></span> </p>
+                        </div>
+  
+                      </div>
+
+                    </div>
+                  </li>
+            <% }); %>
+            <% } %>
+          </ul>
+        </section>
+      </div>
+</body>
+
+</html>

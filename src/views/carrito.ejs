@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizzason</title>
+  <!-- Links de css -->
+  <link rel="stylesheet" href="carrito.css">
+
+  <!-- Links de iconos -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="/icono.png" type="image/x-icon">
+
+
+</head>
+
+<body>
+
+  <!-- Aqui llamamos el headder osea la nav que creamos que se encuenta en la carpeta partials y se llama nav.ejs -->
+  <%- include('partials/nav') %>
+
+    <div class="contenedor_carrito">
+      <section id="productos-agregados">
+        <h2>Carrito <i class="fa-solid fa-cart-shopping"></i></h2>
+        <ul class="lista-productos">
+          <% if (carrito.length===0) { %>
+            <li>
+              <h3>No hay productos en el carrito.</h3>
+              <form action="/catalogo">
+                <input class="agregar" type="submit" value="Agrega un producto"
+                  style="background-color: rgb(0, 0, 0); color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;" />
+              </form>
+            </li>
+            <% } else { %>
+              <% var datosProductos = []; %>
+              <% let total = 0; %> 
+              <% carrito.forEach(function(producto) { %>
+              <% 
+                let precioOriginal = parseFloat(producto.precio);
+                let precioFinal = precioOriginal;
+                
+                if (producto.tamaño.trim().toLowerCase() === 'mediana') {
+                  precioFinal = precioOriginal * 1.10;
+                } else if (producto.tamaño.trim().toLowerCase() === 'familiar') {
+                  precioFinal = precioOriginal * 1.20;
+                }
+                
+                var datosProducto = {
+                  imagen: producto.imagen,
+                  producto: producto.producto,
+                  tamaño: producto.tamaño,
+                  precio: precioFinal.toFixed(2),
+                  cantidad: producto.cantidad,
+                  idUsuario: idUsuario
+                };
+                datosProductos.push(datosProducto);
+
+                total += precioFinal * producto.cantidad;
+              %>
+                <li>
+                  <div class="img_producto">
+                    <img id="img_producto" src="<%= producto.imagen %>" alt="<%= producto.producto %>"
+                      img="<%= producto.imagen %>">
+                  </div>
+
+                  <div class="producto-info">
+                    <div class="nombre_producto">
+                      <h3 id="nombre_producto" producto="<%= producto.producto %>"><%= producto.producto %></h3>
+                    </div>
+
+                    <div class="producto-detalles">
+                      <div class="tamaño">
+                        <p>Tamaño: <span class="tamaño">$<%= producto.tamaño %></span></p>
+                      </div>
+
+                    <div class="producto-detalles">
+                      <div class="precio">
+                        <p>Precio por pizza: <span class="precio">$<%= precioFinal.toFixed(2) %></span></p>
+                      </div>
+
+                      <div class="cantidad">
+                        <p id="producto_cantidad" cantidad="<%= producto.cantidad %>">Cantidad: <span class="cantidad"><%= producto.cantidad %></span></p>
+                      </div>
+
+                      <p hidden id="idUsuario"><%= idUsuario %> </p>
+
+                      <form action="/eliminar" method="POST">
+                        <input type="hidden" id="id_carrito" name="id_carrito" value="<%= producto.id_carrito %>" />
+                        <input class="eliminar" type="submit" value="Eliminar del Carrito"
+                          style="background-color: rgb(0, 0, 0); color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+                      </form>
+
+                      <form action="/catalogo">
+                        <input class="agregar" type="submit" value="Agregar producto"
+                          style="background-color: rgb(0, 0, 0); color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+                      </form>
+
+                    </div>
+                  </div>
+                </li>
+                <% }); %>
+
+                <p id="datos" hidden><%= JSON.stringify(datosProductos) %></p>
+
+                  <section id="resumen-compra">
+                    <div class="elementos_pago">
+                      <h2>Resumen de Compra</h2>
+                      <div class="precio-pagar">
+     
+                                <p>Precio a pagar: <span class="precio">$<%= total.toFixed(2) %></span></p>
+                      </div>
+                      <button class="btn-finalizar-compra" id="checkout" data-total="<%= total.toFixed(2) %>">Pagar con
+                        Paypal</button>
+
+                    </div>
+                  </section>
+                  <% } %>
+
+        </ul>
+      </section>
+    </div>
+
+
+      <script>
+        const checkout = document.getElementById('checkout');
+
+
+        checkout.addEventListener('click', async function () {
+          // Obtener otros datos necesarios
+          const total = checkout.getAttribute('data-total');
+          const idUsuario = document.getElementById('idUsuario').textContent;
+          const datos = document.getElementById('datos').textContent;
+
+          const response = await fetch('/create-order', {
+            method: 'POST',
+            body: JSON.stringify({ total, idUsuario, datos }),
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          });
+
+          const data = await response.json();
+
+          console.log(data);
+
+          window.location.href = data.links[1].href;
+        });
+
+      </script>
+</body>
+
+</html>

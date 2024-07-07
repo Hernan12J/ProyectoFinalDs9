@@ -1,0 +1,137 @@
+/* Estilos generales de la página */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Spartan', sans-serif;
+}
+
+h2 {
+  font-size: 35px;
+  line-height: 54px;
+  padding: 3%;
+  color: #fff; /* Cambiado a blanco */
+  margin-left: 18%;
+}
+
+.registro {
+  margin: 0 auto;
+}
+
+.frameregistro {
+  width: 35em;
+  height: auto;
+  margin: 5% auto;
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  border-radius: 20px;
+  background-color: #000; /* Cambiado a negro */
+  box-shadow: 32px 32px 100px #afafaf, -32px -32px 100px #000000; /* Cambiado a negro */
+  padding: 3%;
+}
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #fff; /* Cambiado a blanco */
+  margin-bottom: 2%;
+}
+
+.input-group2 {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 3%;
+}
+
+.input-half {
+  width: 48%;
+}
+
+input[type=text],
+input[type=date],
+input[type=email],
+input[type=password] {
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #fff; /* Cambiado a blanco */
+  outline: 0;
+  font-size: 1.3rem;
+  color: #fff; /* Cambiado a blanco */
+  background: transparent;
+  margin: 0.5%;
+}
+
+input[type=text]::placeholder,
+input[type=date]::placeholder,
+input[type=email]::placeholder,
+input[type=password]::placeholder {
+  color: #fff; /* Cambiado a blanco */
+}
+
+.partebaja {
+  margin-top: 10%;
+}
+
+.alert {
+  padding: 1%;
+  color: #000; /* Cambiado a negro */
+  font-size: 18px;
+  text-align: center;
+  margin-left: 30%;
+  font-weight: bold;
+  border: 0.5px solid;
+  width: 200px;
+  height: 25px;
+  background-color: rgba(255, 255, 255, 0.3); /* Cambiado a blanco transparente */
+  border-radius: 3%;
+}
+
+.btn_registrar {
+  display: block;
+  margin: auto;
+  background: #ffffff; /* Cambiado a negro */
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 0.2s;
+  font-size: 1.2em;
+  width: 160px;
+  height: 45px;
+  color: #000000; /* Cambiado a blanco */
+}
+
+.btn_registrar:hover {
+  background: #40403e; /* Cambiado a un tono más claro de negro */
+}
+
+.volver {
+  text-align: center;
+  margin: 2%;
+}
+
+.volver p {
+  display: inline-block;
+}
+
+.volver a {
+  color: #fff; /* Cambiado a blanco */
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.volver a:hover {
+  color: #63605e; /* Cambiado a un tono más claro de negro */
+}

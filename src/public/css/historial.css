@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Spartan',sans-serif;
+}
+
+.titulo{
+ margin-left: 23%
+}
+
+.reenvio{
+    position: absolute;
+    right: 3%;
+}
+
+.contenedor_carrito {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 10%;
+  }
+  
+  /* Página de compras */
+  
+  #pagina-header {
+    background-image: url("/banner_2.png");
+    background-size: cover;
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 14px;
+    /* background-color: #4F0159; */
+  }
+  
+  
+  #pagina-header h2,
+  #pagina-header p {
+    color: #ffffff;
+  }
+  
+  #pagina-header p,
+  #pagina-header p {
+    color: #7a028a;
+  }
+  
+  /* Lista de productos */
+  /* titulo de productos */
+  #productos-agregados {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    padding-right: 20%;
+  }
+  
+  #productos-agregados h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+  }
+  
+  /* contenido de productos */
+  .lista-productos li {
+    display: flex;
+    align-items: center;
+    margin-left: 22%;
+    border-bottom: 1px solid #000;
+    padding: 10px;
+  }
+  
+  .lista-productos li img {
+    width: 130px;
+    height: 80px;
+    margin-left: 10px;
+  }
+  
+  
+  .lista-productos li h3 {
+    font-size: 18px;
+  }
+  
+  .nombre_producto{
+    text-align: center;
+    height: 40px;
+    width: 180px;
+    margin-top: 30px;
+  }
+  
+  .lista-productos li p {
+    font-size: 16px;
+    margin: 0;
+    margin-left: 25px;
+    margin-top: 20px;
+  }
+  
+  .sinproductos{
+    margin-left: 35%;
+  }
+  
+  .producto-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+  .producto-detalles {
+    display: flex;
+  }
+  
+  .acciones {
+    margin-left: 5%;
+    display: flex;
+  }
+  
+  .acciones button {
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 1px;
+  }
+  
+  .acciones button:hover {
+    transition: 0.3s;
+    background-color: #dcdbdb;
+  }
+  
+
+  
+  /* Card de precio */
+  .bold {
+    font-weight: normal;
+
+  }
+
+  .bold span{
+    font-weight: bold;
+  }
+  

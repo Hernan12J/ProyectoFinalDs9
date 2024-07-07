@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="nav.css">
+
+<section id="headder">
+
+  <a> <img src="icono.png" class="logo" alt=""></a>
+
+  <div>
+    <ul id="navbar">
+      <li><a href="catalogo">Catalogo</a></li>
+
+      <% if (isAuthenticated) { %>
+        <li><a class="dropdown-item" href="carrito">Carrito</a></li>
+        <li><a class="dropdown-item" href="historial_compras">Articulos Comprados</a></li>
+        <li><a class="dropdown-item" href="/logout">Cerrar session</a></li>
+        <% } else { %>
+          <div class="Sesion">
+            <li><a href="login">Iniciar Sesión</a></li>
+          </div>
+          <div class="Sesion">
+            <li><a href="registro">Registrarse</a></li>
+          </div>
+          <% } %>
+    </ul>
+  </div>
+
+</section>

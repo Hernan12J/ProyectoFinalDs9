@@ -1,0 +1,85 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Spartan',sans-serif;
+}
+
+ #prodetalles {
+    display: flex;
+    margin-top: 0px;
+    padding: 3%;
+  }
+ 
+  #prodetalles .solo-pro-image {
+    width: 40%;
+    margin-right: 150px;
+  }
+ 
+  /* Aqui comodamos las imagenes pequeñas "small" */
+
+  .small-img-row {
+    display: flex;
+    flex-direction: row;
+  }
+  
+
+  .small-img-group {
+    display: flex;
+    justify-content: space-between;
+  }
+ 
+  .small-img-col {
+    flex-basis: 24%;
+    cursor: pointer;
+  }
+ 
+ 
+ 
+ 
+ 
+  /* AQUI SE CONFIGURA LA PAGINA DE SPRODUCTOS.EJS */
+ 
+  #prodetalles .solo-pro-detalles {
+    width: 50%;
+    padding-top: 30px;
+  }
+ 
+  #prodetalles .solo-pro-detalles h4 {
+    padding: 40px 0 20px 0;
+  }
+ 
+  #prodetalles .solo-pro-detalles h2 {
+    font-size: 26px;
+  }
+ 
+  #prodetalles .solo-pro-detalles select {
+    display: block;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+  }
+ 
+  #prodetalles .solo-pro-detalles input {
+    width: 50px;
+    height: 47px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+ 
+  #prodetalles .solo-pro-detalles input:focus {
+    outline: none;
+  }
+ 
+  #prodetalles .solo-pro-detalles button {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+ 
+  #prodetalles .solo-pro-detalles span {
+    line-height: 25px;
+  }
